@@ -38,7 +38,7 @@ contract MockBridgeToken is IERC20Detailed, IGovernable, IPriceable {
     function addRealmAdministrator(address) external override {}
     function removeRealmAdministrator(address) external override {}
     function setPriceOracle(IPriceOracle) external override {}
-    function convertTo(uint256 a, string calldata, uint8) external override pure returns (uint256) { return a; }
+    function convertTo(uint256 a, string calldata, uint8) external override view returns (uint256) { return a; }
     function mint(address to, uint256 v) external { balances[to] += v; totalSupply_ += v; }
     function _move(address f, address t, uint256 v) internal { require(balances[f] >= v, "bal"); balances[f] -= v; balances[t] += v; }
 }
