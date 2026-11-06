@@ -4,6 +4,7 @@ pragma solidity 0.6.2;
 import "../operating/Processor.sol";
 import "../operating/RuleEngine.sol";
 import "../operating/ComplianceRegistry.sol";
+import "../interfaces/IRuleEngine.sol";
 import "../token/BridgeToken.sol";
 
 /**
@@ -30,7 +31,7 @@ contract SupplyConservationHarness {
 
         cr.initialize(address(this));
         re.initialize(address(this));
-        processor.initialize(address(this), re);
+        processor.initialize(address(this), IRuleEngine(address(re)));
 
         address[] memory tis = new address[](0);
         token.initialize(address(this), processor, "TestToken", "TST", 18, tis);
