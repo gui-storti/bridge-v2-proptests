@@ -63,7 +63,7 @@ contract OracleOnHoldHarness {
     uint256 public expectedPrice = 123456;
     uint8 public expectedDecimals = 6;
 
-    uint256[] public pendingIds;
+    uint256 public pendingId;
 
     constructor() public {
         oracle = new PriceOracle();
@@ -81,23 +81,23 @@ contract OracleOnHoldHarness {
 
         // funda um on-hold transfer de exemplo
         cr.addOnHoldTransfer(TI, address(token), FROM, TO, 100 ether);
-        pendingIds.push(0);
+        pendingId = 0;
     }
 
     // ---- handlers ----
 
-    function processApprove(uint8 idx) external {
+    function processApprove(uint8) external {
         uint256[] memory ids = new uint256[](1);
         uint8[] memory dec = new uint8[](1);
-        ids[0] = pendingIds[idx % pendingIds.length];
+        ids[0] = pendingId;
         dec[0] = 1; // APPROVE
         cr.processOnHoldTransfers(ids, dec, false);
     }
 
-    function processReject(uint8 idx) external {
+    function processReject(uint8) external {
         uint256[] memory ids = new uint256[](1);
         uint8[] memory dec = new uint8[](1);
-        ids[0] = pendingIds[idx % pendingIds.length];
+        ids[0] = pendingId;
         dec[0] = 2; // REJECT
         cr.processOnHoldTransfers(ids, dec, false);
     }
