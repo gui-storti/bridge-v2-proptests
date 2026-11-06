@@ -37,8 +37,8 @@
 
 pragma solidity 0.6.2;
 
-import "../../node_modules/@openzeppelin/contracts-ethereum-package/contracts/math/SafeMath.sol";
-import "../../node_modules/@openzeppelin/upgrades/contracts/Initializable.sol";
+import "@openzeppelin/contracts-ethereum-package/contracts/math/SafeMath.sol";
+import "@openzeppelin/upgrades/contracts/Initializable.sol";
 import "./abstract/AbstractRule.sol";
 import "../interfaces/IAdministrable.sol";
 import "../interfaces/IERC20Detailed.sol";

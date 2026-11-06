@@ -37,7 +37,7 @@
 
 pragma solidity 0.6.2;
 
-import "../../node_modules/@openzeppelin/contracts-ethereum-package/contracts/token/ERC20/IERC20.sol";
+import "@openzeppelin/contracts-ethereum-package/contracts/token/ERC20/IERC20.sol";
 
 interface IExchange {
   event ItemUpdated(uint256 id);

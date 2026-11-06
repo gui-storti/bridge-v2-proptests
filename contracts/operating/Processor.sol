@@ -37,7 +37,7 @@
 
 pragma solidity 0.6.2;
 
-import "../../node_modules/@openzeppelin/contracts-ethereum-package/contracts/math/SafeMath.sol";
+import "@openzeppelin/contracts-ethereum-package/contracts/math/SafeMath.sol";
 import "../interfaces/IProcessor.sol";
 import "../interfaces/IRule.sol";
 import "../interfaces/IRuleEngine.sol";

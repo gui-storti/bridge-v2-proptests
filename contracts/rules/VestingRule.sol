@@ -38,7 +38,7 @@
 
 pragma solidity 0.6.2;
 
-import "../../node_modules/@openzeppelin/upgrades/contracts/Initializable.sol";
+import "@openzeppelin/upgrades/contracts/Initializable.sol";
 import "./abstract/AbstractRule.sol";
 import "../interfaces/IComplianceRegistry.sol";
 import "../interfaces/IGovernable.sol";

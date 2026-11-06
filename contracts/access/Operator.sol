@@ -37,7 +37,7 @@
 
 pragma solidity 0.6.2;
 
-import "../../node_modules/@openzeppelin/contracts-ethereum-package/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts-ethereum-package/contracts/access/Ownable.sol";
 import "./Roles.sol";
 
 /**
